@@ -4,6 +4,20 @@ public class MyLinkList<K> {
     public INode<K> head;
     public INode<K> tail;
 
+    public K search(K key) {
+        INode head = this.head;
+        while (head != null) {
+            INode<K> current = head;
+            if (key == current.getKey()) {
+                System.out.println("Element found");
+                return current.getKey();
+            }
+            head = current.getNext();
+        }
+        System.out.println("Element Not Found");
+        return null;
+    }
+
     public INode<K> pop() {
         INode<K> tempNode = this.head;
         this.head = head.getNext();
@@ -24,13 +38,13 @@ public class MyLinkList<K> {
     }
 
     public void append(INode<K> newNode) {
-        if (this.head == null ) {
-            this.head=newNode;
+        if (this.head == null) {
+            this.head = newNode;
         }
         if (this.tail != null) {
             this.tail.setNext(newNode);
         }
-        this.tail=newNode;
+        this.tail = newNode;
     }
 
     public void printMyNodes() {
@@ -53,7 +67,5 @@ public class MyLinkList<K> {
                 ", tail=" + tail +
                 '}';
     }
-
-
 }
 

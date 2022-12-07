@@ -7,12 +7,14 @@ public class Main {
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
         System.out.println("create Linked List by adding 30 and 56 to 70");
-        MyLinkList<Integer>myLinkList=new MyLinkList<>();
+        MyLinkList<Integer> myLinkList = new MyLinkList<>();
         myLinkList.append(myFirstNode);
         myLinkList.append(mySecondNode);
         myLinkList.append(myThirdNode);
         myLinkList.printMyNodes();
         myLinkList.pop();
+        myLinkList.printMyNodes();
+        myLinkList.search(30);
         myLinkList.printMyNodes();
     }
 }
