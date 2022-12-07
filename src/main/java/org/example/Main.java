@@ -6,9 +6,11 @@ public class Main {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
-        myFirstNode.setNext(mySecondNode);
-        mySecondNode.setNext(myThirdNode);
-        System.out.println("Create a Simple Linked List of 56, 30 and 70");
-        System.out.println(myFirstNode);
+        System.out.println("create Linked List by adding 30 and 56 to 70");
+        MyLinkList<Integer>myLinkList=new MyLinkList<>();
+        myLinkList.add(myFirstNode);
+        myLinkList.add(mySecondNode);
+        myLinkList.add(myThirdNode);
+        myLinkList.printMyNodes();
     }
 }
