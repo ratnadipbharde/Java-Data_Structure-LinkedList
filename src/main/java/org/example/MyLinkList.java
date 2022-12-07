@@ -4,18 +4,17 @@ public class MyLinkList<K> {
     public INode<K> head;
     public INode<K> tail;
 
-    public K search(K key) {
-        INode head = this.head;
-        while (head != null) {
-            INode<K> current = head;
+    public void search(K key) {
+        INode tempNode = this.head;
+        while (tempNode != null) {
+            INode<K> current = tempNode;
             if (key == current.getKey()) {
                 System.out.println("Element found");
-                return current.getKey();
+               return;
             }
-            head = current.getNext();
+            tempNode = current.getNext();
         }
         System.out.println("Element Not Found");
-        return null;
     }
 
     public INode<K> pop() {
