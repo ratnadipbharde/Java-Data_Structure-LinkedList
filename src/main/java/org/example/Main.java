@@ -8,9 +8,9 @@ public class Main {
         MyNode<Integer> myThirdNode = new MyNode<>(70);
         System.out.println("create Linked List by adding 30 and 56 to 70");
         MyLinkList<Integer>myLinkList=new MyLinkList<>();
-        myLinkList.add(myFirstNode);
-        myLinkList.add(mySecondNode);
-        myLinkList.add(myThirdNode);
+        myLinkList.append(myFirstNode);
+        myLinkList.append(mySecondNode);
+        myLinkList.append(myThirdNode);
         myLinkList.printMyNodes();
     }
 }
