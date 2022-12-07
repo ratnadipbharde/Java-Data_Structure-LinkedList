@@ -12,5 +12,7 @@ public class Main {
         myLinkList.append(mySecondNode);
         myLinkList.append(myThirdNode);
         myLinkList.printMyNodes();
+        myLinkList.pop();
+        myLinkList.printMyNodes();
     }
 }

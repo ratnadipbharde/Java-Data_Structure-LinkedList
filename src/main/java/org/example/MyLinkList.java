@@ -4,6 +4,11 @@ public class MyLinkList<K> {
     public INode<K> head;
     public INode<K> tail;
 
+    public INode<K> pop() {
+        INode<K> tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
 
     public void add(INode<K> newNode) {
         if (this.tail == null) {
