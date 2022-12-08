@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LinkList" />
+        <module name="Java-Data_Structure-LinkedList" />
       </profile>
     </annotationProcessing>
   </component>

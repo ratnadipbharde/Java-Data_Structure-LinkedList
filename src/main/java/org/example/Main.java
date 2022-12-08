@@ -12,9 +12,16 @@ public class Main {
         myLinkList.append(mySecondNode);
         myLinkList.append(myThirdNode);
         myLinkList.printMyNodes();
-        myLinkList.pop();
+       // myLinkList.pop();
         myLinkList.printMyNodes();
-        myLinkList.search(30);
+        System.out.println(" found at index : "+myLinkList.index(70));
+        if (myLinkList.search(50)){
+            System.out.println("element found at index :");
+        }
+        else {
+            System.out.println("element not found ");
+        }
         myLinkList.printMyNodes();
+        System.out.println("size="+myLinkList.getSize());
     }
 }

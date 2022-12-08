@@ -1,25 +1,45 @@
 package org.example;
 
 public class MyLinkList<K> {
-    public INode<K> head;
-    public INode<K> tail;
+    private INode<K> head;
+    private INode<K> tail;
 
-    public void search(K key) {
+    private Integer size=0;
+
+    public Integer getSize(){
+        return size;
+    }
+
+    public Integer index(K key) {
+        INode tempNode = this.head;
+        Integer count = 0;
+        while (tempNode != null) {
+            INode<K> current = tempNode;
+            if (key == current.getKey()) {
+                break;
+            }
+            tempNode = current.getNext();
+            count++;
+        }
+        return count;
+    }
+
+    public boolean search(K key) {
         INode tempNode = this.head;
         while (tempNode != null) {
             INode<K> current = tempNode;
             if (key == current.getKey()) {
-                System.out.println("Element found");
-               return;
+               return true;
             }
             tempNode = current.getNext();
         }
-        System.out.println("Element Not Found");
+        return false;
     }
 
     public INode<K> pop() {
         INode<K> tempNode = this.head;
         this.head = head.getNext();
+        size--;
         return tempNode;
     }
 
@@ -34,6 +54,7 @@ public class MyLinkList<K> {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
+        size++;
     }
 
     public void append(INode<K> newNode) {
@@ -44,6 +65,7 @@ public class MyLinkList<K> {
             this.tail.setNext(newNode);
         }
         this.tail = newNode;
+        size++;
     }
 
     public void printMyNodes() {
