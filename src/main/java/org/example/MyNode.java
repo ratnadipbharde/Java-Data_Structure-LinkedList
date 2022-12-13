@@ -28,12 +28,4 @@ public class MyNode<K> implements INode<K> {
     public void setNext(INode<K> next) {
         this.next = next;
     }
-
-    @Override
-    public String toString() {
-        return "MyNode{" +
-                "key=" + key +
-                ", next=" + next +
-                '}';
-    }
 }

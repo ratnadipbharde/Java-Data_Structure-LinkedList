@@ -23,5 +23,6 @@ public class Main {
         }
         myLinkList.printMyNodes();
         System.out.println("size="+myLinkList.getSize());
+
     }
 }

@@ -4,10 +4,31 @@ public class MyLinkList<K> {
     private INode<K> head;
     private INode<K> tail;
 
-    private Integer size=0;
+    public INode<K> getHead() {
+        return head;
+    }
 
-    public Integer getSize(){
-        return size;
+    public INode<K> getTail() {
+        return tail;
+    }
+    
+    public boolean isEmpty() {
+        if (this.head == null && this.tail == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Integer getSize() {
+        INode tempNode = this.head;
+        Integer count = 0;
+        while (tempNode != null) {
+            INode<K> current = tempNode;
+            tempNode = current.getNext();
+            count++;
+        }
+        return count;
     }
 
     public Integer index(K key) {
@@ -39,8 +60,17 @@ public class MyLinkList<K> {
     public INode<K> pop() {
         INode<K> tempNode = this.head;
         this.head = head.getNext();
-        size--;
         return tempNode;
+    }
+
+    public void removeLast() {
+        INode tempNode = this.head;
+        while (tempNode!=null){
+            if (tempNode.getNext()==tail){
+                tempNode.setNext(null);
+            }
+            tempNode=tempNode.getNext();
+        }
     }
 
     public void add(INode<K> newNode) {
@@ -54,7 +84,6 @@ public class MyLinkList<K> {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
-        size++;
     }
 
     public void append(INode<K> newNode) {
@@ -65,7 +94,6 @@ public class MyLinkList<K> {
             this.tail.setNext(newNode);
         }
         this.tail = newNode;
-        size++;
     }
 
     public void printMyNodes() {
@@ -79,14 +107,6 @@ public class MyLinkList<K> {
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
-    }
-
-    @Override
-    public String toString() {
-        return "MyLinkList{" +
-                "head=" + head +
-                ", tail=" + tail +
-                '}';
     }
 }
 
